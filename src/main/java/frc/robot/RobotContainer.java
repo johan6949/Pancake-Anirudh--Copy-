@@ -20,9 +20,7 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final DriveTrain driveTrain = new DriveTrain();
-
   public static Joystick joystick = new Joystick(0);
-
   private final JoystickCommand joystickCommand = new JoystickCommand(driveTrain);
   
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
