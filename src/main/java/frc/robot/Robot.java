@@ -4,10 +4,6 @@
 
 package frc.robot;
 
-import com.revrobotics.CANSparkMax;
-import com.revrobotics.CANSparkMaxLowLevel.MotorType;
-
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
 
 import edu.wpi.first.wpilibj2.command.Command;
@@ -21,13 +17,6 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
 public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
   private RobotContainer m_robotContainer;
-
-  private CANSparkMax leftMotor1 = new CANSparkMax(0, MotorType.kBrushless);
-  private CANSparkMax leftMotor2 = new CANSparkMax(1, MotorType.kBrushless);
-  private CANSparkMax rightMotor1 = new CANSparkMax(2, MotorType.kBrushless);
-  private CANSparkMax rightMotor2 = new CANSparkMax(3, MotorType.kBrushless);
-
-  private Joystick joystick = new Joystick(0);
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -92,15 +81,7 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during operator control. */
   @Override
   public void teleopPeriodic() {
-    double speed = joystick.getRawAxis(1) * 0.6;
-    double turn = joystick.getRawAxis(4) * 0.3;
 
-    double left = speed + turn;
-    double right = speed - turn;
-    leftMotor1.set(left);
-    leftMotor2.set(left);
-    rightMotor1.set(-right);
-    rightMotor2.set(-right);
   }
 
   @Override

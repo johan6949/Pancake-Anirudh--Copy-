@@ -46,7 +46,7 @@ public class RobotContainer {
     // Schedule `ExampleCommand` when `exampleCondition` changes to `true`
     // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,
     // cancelling on release.
-    driveTrain.setDefaultCommand(new JoystickCommand(driveTrain));
+    driveTrain.setDefaultCommand(joystickCommand);
   }
 
   /**
